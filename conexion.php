@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost'; // Cambia esto si tu servidor PostgreSQL está en otro host
 $dbname = 'productos_db'; 
-$user = 'tu_usuario'; 
-$password = 'tu_contraseña';
+$user = 'postgres'; 
+$password = 'admin';
 
 // Establecer conexión a la base de datos PostgreSQL
 try {

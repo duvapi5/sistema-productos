@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fetch(`cargar_datos.php?bodega_id=${bodegaId}`)
         .then((res) => res.json())
         .then((data) => {
-          sucursalSelect.innerHTML = '<option value="">Seleccione...</option>';
+          sucursalSelect.innerHTML = '<option value=""></option>';
           data.forEach((sucursal) => {
             const option = document.createElement("option");
             option.value = sucursal.id;
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         });
     } else {
-      sucursalSelect.innerHTML = '<option value="">Seleccione...</option>';
+      sucursalSelect.innerHTML = '<option value=""></option>';
       sucursalSelect.disabled = true;
     }
   });
@@ -176,8 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Producto guardado exitosamente!");
             form.reset();
             // Resetear selects
-            sucursalSelect.innerHTML =
-              '<option value="">Seleccione...</option>';
+            sucursalSelect.innerHTML = '<option value=""></option>';
             sucursalSelect.disabled = true;
           } else {
             alert("Error: " + data.message);
