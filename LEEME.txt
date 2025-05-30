@@ -1,0 +1,42 @@
+=== INSTRUCCIONES ===
+
+VERSIONES:
+- PHP 8.2.12
+- PostgreSQL 16
+
+PASOS:
+1. COPIAR ARCHIVOS:
+Subir toda la carpeta al servidor web:
+	Para XAMPP: en la carpeta `htdocs/`
+
+2. BASE DE DATOS:
+Abrir pgAdmin o terminal PostgreSQL y ejecutar:
+	```sql
+	CREATE DATABASE productos_db;
+	```  
+Importar estructura y datos:
+	a) Desde pgAdmin:
+        - Click derecho en la BD → Restore → Seleccionar archivos .sql
+ 
+	b) Desde terminal (en la carpeta del proyecto):
+        ```bash
+        psql -U tu_usuario -d productos_db -f sql/estructura.sql
+        psql -U tu_usuario -d productos_db -f sql/datos_iniciales.sql
+        ```
+
+3. CONFIGURAR:
+	Editar el archivo `conexion.php` con tus datos:
+        ```php
+        $host = 'localhost';
+        $dbname = 'productos_db';
+        $user = 'tu_usuario';  // Ej: 'postgres'
+        $password = 'tu_contraseña';
+        ```
+
+4. ACCEDER:
+Abrir en navegador:
+	```url
+	http://localhost/nombre-proyecto/
+	```
+
+Ante cualquier duda: duvan.apiolaza12@gmail.com
